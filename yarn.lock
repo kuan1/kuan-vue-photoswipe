@@ -898,10 +898,6 @@ babel-code-frame@^6.26.0:
     esutils "^2.0.2"
     js-tokens "^3.0.2"
 
-babel-helper-vue-jsx-merge-props@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.npmjs.org/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-2.0.3.tgz#22aebd3b33902328e513293a8e4992b384f9f1b6"
-
 babel-loader@^8.0.2:
   version "8.0.4"
   resolved "https://registry.npmjs.org/babel-loader/-/babel-loader-8.0.4.tgz#7bbf20cbe4560629e2e41534147692d3fecbdce6"
@@ -910,16 +906,6 @@ babel-loader@^8.0.2:
     loader-utils "^1.0.2"
     mkdirp "^0.5.1"
     util.promisify "^1.0.0"
-
-babel-plugin-syntax-jsx@^6.18.0:
-  version "6.18.0"
-  resolved "http://registry.npmjs.org/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
-
-babel-plugin-transform-vue-jsx@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.npmjs.org/babel-plugin-transform-vue-jsx/-/babel-plugin-transform-vue-jsx-3.7.0.tgz#d40492e6692a36b594f7e9a1928f43e969740960"
-  dependencies:
-    esutils "^2.0.2"
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -1694,6 +1680,10 @@ csso@^3.5.0:
   resolved "https://registry.npmjs.org/csso/-/csso-3.5.1.tgz#7b9eb8be61628973c1b261e169d2f024008e758b"
   dependencies:
     css-tree "1.0.0-alpha.29"
+
+cuint@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/cuint/-/cuint-0.2.2.tgz#408086d409550c2631155619e9fa7bcadc3b991b"
 
 cyclist@~0.2.2:
   version "0.2.2"
@@ -3072,6 +3062,40 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.npmjs.org/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
+kuan-pack@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.npmjs.org/kuan-pack/-/kuan-pack-1.0.12.tgz#5363dd3b06ac39591c39db72d6a87a33af87f3b7"
+  dependencies:
+    "@babel/core" "^7.0.1"
+    "@babel/plugin-transform-runtime" "^7.0.0"
+    "@babel/preset-env" "^7.0.0"
+    "@babel/runtime" "^7.1.2"
+    autoprefixer "^9.1.5"
+    babel-loader "^8.0.2"
+    chalk "^2.4.1"
+    clean-webpack-plugin "^0.1.19"
+    copy-webpack-plugin "^4.5.2"
+    css-loader "^1.0.0"
+    file-loader "^2.0.0"
+    html-webpack-plugin "^3.2.0"
+    less "^3.8.1"
+    less-loader "^4.1.0"
+    mini-css-extract-plugin "^0.4.2"
+    optimize-css-assets-webpack-plugin "^5.0.1"
+    portfinder "^1.0.17"
+    postcss-loader "^3.0.0"
+    postcss-url "^8.0.0"
+    style-loader "^0.23.0"
+    url-loader "^1.1.1"
+    vue-loader "^15.4.2"
+    vue-template-compiler "^2.5.17"
+    webpack "^4.19.0"
+    webpack-cli "^3.1.0"
+    webpack-dev-server "^3.1.8"
+    webpack-merge "^4.1.4"
+    webpack-node-externals "^1.7.2"
+    webpackbar "^2.6.3"
+
 last-call-webpack-plugin@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/last-call-webpack-plugin/-/last-call-webpack-plugin-3.0.0.tgz#9742df0e10e3cf46e5c0381c2de90d3a7a2d7555"
@@ -3834,6 +3858,10 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
 
+photoswipe@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.npmjs.org/photoswipe/-/photoswipe-4.1.2.tgz#95c20a75cea23b70d6299641cad82e03cae7f797"
+
 pify@^2.0.0:
   version "2.3.0"
   resolved "https://registry.npmjs.org/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
@@ -4155,6 +4183,16 @@ postcss-unique-selectors@^4.0.1:
     alphanum-sort "^1.0.0"
     postcss "^7.0.0"
     uniqs "^2.0.0"
+
+postcss-url@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.npmjs.org/postcss-url/-/postcss-url-8.0.0.tgz#7b10059bd12929cdbb1971c60f61a0e5af86b4ca"
+  dependencies:
+    mime "^2.3.1"
+    minimatch "^3.0.4"
+    mkdirp "^0.5.0"
+    postcss "^7.0.2"
+    xxhashjs "^0.2.1"
 
 postcss-value-parser@^3.0.0, postcss-value-parser@^3.2.3, postcss-value-parser@^3.3.0:
   version "3.3.0"
@@ -5538,6 +5576,12 @@ xregexp@4.0.0:
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
+
+xxhashjs@^0.2.1:
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/xxhashjs/-/xxhashjs-0.2.2.tgz#8a6251567621a1c46a5ae204da0249c7f8caa9d8"
+  dependencies:
+    cuint "^0.2.2"
 
 "y18n@^3.2.1 || ^4.0.0", y18n@^4.0.0:
   version "4.0.0"

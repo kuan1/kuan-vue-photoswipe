@@ -7,23 +7,27 @@ let instance
 export default {
   /**
    * 实例化 图片预览
-   * @param {Object} options
-   * @param {Array} options.images [{src: '', w: '', h: '', title: ''}] 图片数组
-   * @param {Number} options.index 下标
-   * @param {Boolean} options.history hash历史
+   * @param {Array} images [{src: '', w: '', h: '', title: ''}] 图片数组
+   * @param {Object} options {index: 0, history: false}
    */
-  preview(options = {}) {
+  preview(...args) {
     if (!instance) {
       instance = new PhotoSwipe({
         el: document.createElement('div')
       })
       document.body.appendChild(instance.$el)
       Vue.nextTick(() => {
-        instance.init(options)
+        instance.init(...args)
       })
     } else {
-      instance.init(options)
+      instance.init(...args)
     }
+  },
+  push(...args) {
+    if (!instance) {
+      return this.preview(...args)
+    }
+    instance.push(...args)
   },
   close() {
     if (instance) {

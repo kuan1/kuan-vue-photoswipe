@@ -1,6 +1,5 @@
 <template>
   <div
-    v-show="visible"
     ref='pswp'
     class="pswp"
     tabindex="-1"
@@ -93,31 +92,34 @@ import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
 export default {
   data() {
     return {
-      pswp: null,
-      visible: false
+      pswp: null
     }
   },
   methods: {
-    init(options = {}) {
-      this.visible = true
-      const {images = [], index = 0, history =  false, change} = options
+    init(images = [], options = {}) {
+      options.images = images
+      const { index = 0, history = false, change } = options
       if (this.pswp) {
-        this.update(options)
         return
       }
 
-      this.pswp = new PhotoSwipe(this.$refs.pswp, PhotoSwipeUI_Default, images, {history, index})
+      this.pswp = new PhotoSwipe(this.$refs.pswp, PhotoSwipeUI_Default, images, { history, index })
       this.pswp.init()
       this.pswp.listen('close', this.close)
       if (change) {
-        this.pswp.listen('afterChange', change)
+        this.pswp.listen('afterChange', () => {
+          change(this.pswp.getCurrentIndex())
+        })
       }
     },
-    update(options = {}) {
-      this.pswp.items = options.images
+    push(images = [], options = {}) {
+      this.pswp.items.push(...images)
       this.pswp.invalidateCurrItems();
-      // updates the content of slides
       this.pswp.updateSize(true);
+
+      if (options.index !== undefined) {
+        this.pswp.goTo(options.index)
+      }
     },
     close() {
       if (!this.pswp) return

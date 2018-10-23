@@ -113,6 +113,10 @@ export default {
       }
     },
     push(images = [], options = {}) {
+      if (!this.pswp) {
+        this.init(arguments)
+      }
+
       this.pswp.items.push(...images)
       this.pswp.invalidateCurrItems();
       this.pswp.updateSize(true);

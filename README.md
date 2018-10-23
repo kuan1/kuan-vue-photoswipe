@@ -3,7 +3,7 @@
 vue 简单包装一下：
 [https://github.com/dimsemenov/PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 
-预览地址：暂时没有
+预览地址：[https://kuan1.github.io/kuan-vue-photoswipe/demo/](https://kuan1.github.io/kuan-vue-photoswipe/demo/)
 
 ## 使用(Vue)
 

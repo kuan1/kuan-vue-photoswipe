@@ -89,6 +89,8 @@ import 'photoswipe/dist/default-skin/default-skin.css'
 import PhotoSwipe from 'photoswipe/dist/photoswipe'
 import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
 
+import perfectImages from './perfectImages.js'
+
 export default {
   data() {
     return {
@@ -96,8 +98,9 @@ export default {
     }
   },
   methods: {
-    init(images = [], options = {}) {
-      options.images = images
+    async init(images = [], options = {}) {
+      options.images = await perfectImages(images)
+      console.log(options.images)
       const { index = 0, history = false, change } = options
       if (this.pswp) {
         return
@@ -112,12 +115,14 @@ export default {
         })
       }
     },
-    push(images = [], options = {}) {
+    async push(images = [], options = {}) {
       if (!this.pswp) {
         this.init(arguments)
       }
 
-      this.pswp.items.push(...images)
+      const formatImages = await perfectImages(images)
+
+      this.pswp.items.push(...formatImages)
       this.pswp.invalidateCurrItems();
       this.pswp.updateSize(true);
 

@@ -47,9 +47,12 @@ this.$preview('https://www.google.com.hk/images/branding/googlelogo/2x/googlelog
   * @param {Object} options {index: 0, history: false, change: function} === 预览下标、显示hash（hash路由冲突）、change
   */
 photoSwipe.preview(this.images, { index: 1, change: this.callback })
+```
 
+#### 添加预览图片
+
+```
 /**
-  * 添加预览图片
   * @param {Array} images [{src: '', w: '', h: '', title: ''}] === 图片数组
   */
 photoSwipe.push(images)

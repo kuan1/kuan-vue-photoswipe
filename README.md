@@ -1,6 +1,6 @@
-# kuan-vue-photoswipe
+# [kuan-vue-photoswipe](https://github.com/kuan1/kuan-vue-photoswipe)
 
-> test 文件目录下是使用 demo
+> github 仓库目录下 test 文件目录下是使用 demo
 
 vue 简单包装一下：
 [https://github.com/dimsemenov/PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)

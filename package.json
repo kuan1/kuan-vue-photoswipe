@@ -14,7 +14,11 @@
     "url": "git+https://github.com/kuan1/kuan-vue-photoswipe.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "luzhongk@126.com",
+  "files": [
+    "lib",
+    "src"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kuan1/kuan-vue-photoswipe/issues"

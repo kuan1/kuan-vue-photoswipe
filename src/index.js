@@ -33,5 +33,8 @@ export default {
     if (instance) {
       instance.close()
     }
+  },
+  install(vue) {
+    vue.prototype.$preview = this.preview
   }
 }

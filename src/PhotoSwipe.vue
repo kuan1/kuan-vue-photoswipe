@@ -89,7 +89,7 @@ import 'photoswipe/dist/default-skin/default-skin.css'
 import PhotoSwipe from 'photoswipe/dist/photoswipe'
 import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
 
-import perfectImages from './perfectImages.js'
+import getimages from './getimages.js'
 
 export default {
   data() {
@@ -99,14 +99,15 @@ export default {
   },
   methods: {
     async init(images = [], options = {}) {
-      options.images = await perfectImages(images)
-      console.log(options.images)
+      const items = await getimages(images)
       const { index = 0, history = false, change } = options
       if (this.pswp) {
         return
       }
 
-      this.pswp = new PhotoSwipe(this.$refs.pswp, PhotoSwipeUI_Default, images, { history, index })
+      console.log(items)
+
+      this.pswp = new PhotoSwipe(this.$refs.pswp, PhotoSwipeUI_Default, items, { history, index })
       this.pswp.init()
       this.pswp.listen('close', this.close)
       if (change) {
@@ -120,9 +121,9 @@ export default {
         this.init(arguments)
       }
 
-      const formatImages = await perfectImages(images)
+      const items = await getimages(images)
 
-      this.pswp.items.push(...formatImages)
+      this.pswp.items.push(...items)
       this.pswp.invalidateCurrItems();
       this.pswp.updateSize(true);
 

@@ -57,4 +57,5 @@ photoSwipe.push(images)
 
 ## 更新日志
 
+- 1.0.1 package.json 包引入路径
 - 1.0.0 基本预览功能

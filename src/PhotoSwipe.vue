@@ -1,11 +1,5 @@
 <template>
-  <div
-    ref='pswp'
-    class="pswp"
-    tabindex="-1"
-    role="dialog"
-    aria-hidden="true"
-  >
+  <div ref='pswp' class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
     <!-- Background of PhotoSwipe. 
          It's a separate element as animating opacity is faster than rgba(). -->
     <div class="pswp__bg"></div>
@@ -31,22 +25,13 @@
 
           <div class="pswp__counter"></div>
 
-          <button
-            class="pswp__button pswp__button--close"
-            title="Close (Esc)"
-          ></button>
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 
           <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
 
-          <button
-            class="pswp__button pswp__button--fs"
-            title="Toggle fullscreen"
-          ></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
 
-          <button
-            class="pswp__button pswp__button--zoom"
-            title="Zoom in/out"
-          ></button>
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
           <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
           <!-- element will get class pswp__preloader--active when preloader is running -->
@@ -63,16 +48,10 @@
           <div class="pswp__share-tooltip"></div>
         </div>
 
-        <button
-          class="pswp__button pswp__button--arrow--left"
-          title="Previous (arrow left)"
-        >
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
         </button>
 
-        <button
-          class="pswp__button pswp__button--arrow--right"
-          title="Next (arrow right)"
-        >
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
         </button>
 
         <div class="pswp__caption">
@@ -100,14 +79,13 @@ export default {
   methods: {
     async init(images = [], options = {}) {
       const items = await getimages(images)
-      const { index = 0, history = false, change } = options
+      const { index = 0, history = false, change, defaultOptions = {} } = options
       if (this.pswp) {
         return
       }
+      const finalOptions = { index, history, ...defaultOptions }
 
-      console.log(items)
-
-      this.pswp = new PhotoSwipe(this.$refs.pswp, PhotoSwipeUI_Default, items, { history, index })
+      this.pswp = new PhotoSwipe(this.$refs.pswp, PhotoSwipeUI_Default, items, finalOptions)
       this.pswp.init()
       this.pswp.listen('close', this.close)
       if (change) {

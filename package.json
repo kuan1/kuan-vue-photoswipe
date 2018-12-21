@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/kuan1/kuan-vue-photoswipe#readme",
   "devDependencies": {
-    "kuan-pack": "^1.0.12"
+    "kuan-pack": "1.0.12"
   },
   "dependencies": {
     "photoswipe": "^4.1.2",

@@ -3062,9 +3062,10 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.npmjs.org/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-kuan-pack@^1.0.12:
+kuan-pack@1.0.12:
   version "1.0.12"
   resolved "https://registry.npmjs.org/kuan-pack/-/kuan-pack-1.0.12.tgz#5363dd3b06ac39591c39db72d6a87a33af87f3b7"
+  integrity sha512-yntaxdquH5UjlB0IcuXDztgysBGip+BvSq5FdGSGK2V+RPH84OByMdAtlaYDlzGxnoM1HN74fqc/kzzxZ993BQ==
   dependencies:
     "@babel/core" "^7.0.1"
     "@babel/plugin-transform-runtime" "^7.0.0"

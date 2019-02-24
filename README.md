@@ -1,12 +1,9 @@
 # [kuan-vue-photoswipe](https://github.com/kuan1/kuan-vue-photoswipe)
 
-> github 仓库目录下 test 文件目录下是使用 demo
+使用 vue 简单包装一下：
+[photoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 
-vue 简单包装一下：
-[https://github.com/dimsemenov/PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
-
-预览地址：
-[https://kuan1.github.io/kuan-vue-photoswipe/demo/](https://kuan1.github.io/kuan-vue-photoswipe/demo/)
+[预览地址](https://kuan1.github.io/kuan-vue-photoswipe/demo/)
 
 ## 安装
 
@@ -63,10 +60,16 @@ photoSwipe.preview(images)
 
 ## 更新日志
 
-1.0.2
+1.0.4
+- 升级打包工具（webpack-dev-server警告）
+- 加入默认babel依赖
 
+1.0.2
 - 添加参数传入修改
   const { index = 0, history = false, change, defaultOptions = {} } = options
 
-- 1.0.1 package.json 包引入路径
-- 1.0.0 基本预览功能
+1.0.1
+- package.json 包引入路径
+
+1.0.0
+- 基本预览功能

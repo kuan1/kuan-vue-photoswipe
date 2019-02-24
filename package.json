@@ -5,8 +5,8 @@
   "main": "lib/kuan-vue-photoswipe",
   "scripts": {
     "dev": "node build/dev",
-    "build": "node build/build",
-    "build:demo": "node build/build.demo",
+    "build": "rimraf lib && node build/build",
+    "build:demo": "rimraf demo && node build/build.demo",
     "deploy": "bash ./deploy.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,10 +29,10 @@
   },
   "homepage": "https://github.com/kuan1/kuan-vue-photoswipe#readme",
   "devDependencies": {
-    "kuan-pack": "1.0.12"
+    "kuan-pack-vue": "^2.0.6",
+    "rimraf": "^2.6.3"
   },
   "dependencies": {
-    "photoswipe": "^4.1.2",
-    "vue": "^2.5.17"
+    "photoswipe": "^4.1.2"
   }
 }

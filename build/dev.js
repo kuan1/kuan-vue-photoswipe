@@ -1,8 +1,5 @@
 process.env.NODE_ENV = 'development'
 
-const { dev } = require('kuan-pack')
-const { resolve } = require('./utils')
+const { dev } = require('kuan-pack-vue')
 
-dev({
-  entry: resolve('test')
-})
+dev()

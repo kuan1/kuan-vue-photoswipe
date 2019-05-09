@@ -1,8 +1,11 @@
 <template>
-  <h1>
-    <button @click="show">显示一个</button>
-    <button @click="showMore">显示多个</button>
-  </h1>
+  <div class="test-container">
+    <h2>图片预览</h2>
+    <p>
+      <button @click="show">显示一个</button>
+      <button @click="showMore">显示多个</button>
+    </p>
+  </div>
 </template>
 
 <script>
@@ -16,6 +19,7 @@ export default {
     },
     showMore() {
       this.$preview(
+        // ['https://placekitten.com/600/400', 'https://placekitten.com/1200/900']
         [
           {
             src: 'https://placekitten.com/600/400',
@@ -34,5 +38,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoed>
+.test-container {
+  text-align: center;
+}
 </style>

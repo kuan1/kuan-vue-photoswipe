@@ -14,10 +14,21 @@ function getSize(src) {
   })
 }
 
-export default async (src) => {
+export default async src => {
   if (typeof src === 'string') {
     const image = await getSize(src)
     return [image]
   }
-  return src
+
+  return Promise.all(
+    src.map(item => {
+      if (typeof item === 'string') {
+        return getSize(item)
+      }
+      if (!item.w) {
+        return getSize(item.src)
+      }
+      return item
+    })
+  )
 }

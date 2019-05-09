@@ -1,34 +1,20 @@
-#!/bin/bash
-# 发布npm
-start_deploy() {
-  echo "starting..."; # major、minor、patch
-  
-  npm run build;
+#!/usr/bin/env sh
+# abort on errors
+set -e
+repo=kuan-vue-photoswipe
+dist=dist
 
-  git add .;
+# build
+npm run build:gh
+# navigate into the build output directory
+cd $dist
 
-  git commit -a -m 'ready update version';
+git init
+git add -A
+git commit -m 'deploy'
 
-  npm version patch;
+git push -f https://github.com/kuan1/$repo.git master:gh-pages
 
-  echo "end";
-}
+cd -
 
-# 确定发布npm
-read -r -p "Are You Sure? [Y/n] " input
-
-case $input in
-  [yY][eE][sS]|[yY])
-  echo "YES"
-  start_deploy
-  ;;
-
-  [nN][oO]|[nN])
-  echo "No"
-  ;;
-
-  *)
-	echo "Invalid input..."
-	exit 1
-	;;
-esac
+echo "deploy success !!"

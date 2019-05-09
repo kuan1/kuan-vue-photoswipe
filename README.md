@@ -2,7 +2,7 @@
 
 使用 vue 简单包装一下[photoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 
-图片预览只需要一行代码 [预览地址](https://kuan1.github.io/kuan-vue-photoswipe/demo/)
+图片预览只需要一行代码 [预览地址](https://kuan1.github.io/kuan-vue-photoswipe)
 
 ## 安装
 

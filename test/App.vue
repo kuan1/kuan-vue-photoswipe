@@ -2,7 +2,10 @@
   <div class="test-container">
     <h2>kuan-vue-photoswipe</h2>
     <p class="desc">一个简单的vue图片预览插件 图片预览只需要一行代码</p>
-    <p>
+
+    <a href="https://github.com/kuan1/kuan-vue-photoswipe">点击查看使用文档</a>
+
+    <p style="margin-top: 100px">
       <button @click="show">显示一个</button>
       <button @click="showMore">显示多个</button>
     </p>

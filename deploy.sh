@@ -5,7 +5,7 @@ repo=kuan-vue-photoswipe
 dist=dist
 
 # build
-npm run build:gh
+# npm run build:gh
 # navigate into the build output directory
 cd $dist
 

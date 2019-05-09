@@ -1,6 +1,7 @@
 <template>
   <div class="test-container">
-    <h2>图片预览</h2>
+    <h2>kuan-vue-photoswipe</h2>
+    <p class="desc">一个简单的vue图片预览插件 图片预览只需要一行代码</p>
     <p>
       <button @click="show">显示一个</button>
       <button @click="showMore">显示多个</button>
@@ -41,5 +42,8 @@ export default {
 <style scoed>
 .test-container {
   text-align: center;
+}
+.desc {
+  color: #999;
 }
 </style>

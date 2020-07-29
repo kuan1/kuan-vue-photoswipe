@@ -1,15 +1,14 @@
 <template>
-  <div ref='pswp' class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <div ref="pswp" class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
     <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
+    It's a separate element as animating opacity is faster than rgba().-->
     <div class="pswp__bg"></div>
 
     <!-- Slides wrapper with overflow:hidden. -->
     <div class="pswp__scroll-wrap">
-
       <!-- Container that holds slides. 
             PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
+      Don't modify these 3 pswp__item elements, data is added later on.-->
       <div class="pswp__container">
         <div class="pswp__item"></div>
         <div class="pswp__item"></div>
@@ -18,9 +17,7 @@
 
       <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
       <div class="pswp__ui pswp__ui--hidden">
-
         <div class="pswp__top-bar">
-
           <!--  Controls are self-explanatory. Order can be changed. -->
 
           <div class="pswp__counter"></div>
@@ -48,11 +45,9 @@
           <div class="pswp__share-tooltip"></div>
         </div>
 
-        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-        </button>
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
 
-        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-        </button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
 
         <div class="pswp__caption">
           <div class="pswp__caption__center"></div>
@@ -63,61 +58,61 @@
 </template>
 
 <script>
-import 'photoswipe/dist/photoswipe.css'
-import 'photoswipe/dist/default-skin/default-skin.css'
-import PhotoSwipe from 'photoswipe/dist/photoswipe'
-import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
+import 'photoswipe/dist/photoswipe.css';
+import 'photoswipe/dist/default-skin/default-skin.css';
+import PhotoSwipe from 'photoswipe/dist/photoswipe';
+import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 
-import getimages from './getimages.js'
+import getimages from './getimages.js';
 
 export default {
   data() {
     return {
-      pswp: null
-    }
+      pswp: null,
+    };
   },
   methods: {
     async init(images = [], options = {}) {
-      const items = await getimages(images)
-      const { index = 0, history = false, change, defaultOptions = {} } = options
+      const items = await getimages(images);
+      const { index = 0, history = false, change, defaultOptions = {} } = options;
       if (this.pswp) {
-        return
+        return;
       }
-      const finalOptions = { index, history, ...defaultOptions }
+      const finalOptions = { index, history, clickToCloseNonZoomable: false, ...defaultOptions };
 
-      this.pswp = new PhotoSwipe(this.$refs.pswp, PhotoSwipeUI_Default, items, finalOptions)
-      this.pswp.init()
-      this.pswp.listen('close', this.close)
+      this.pswp = new PhotoSwipe(this.$refs.pswp, PhotoSwipeUI_Default, items, finalOptions);
+      this.pswp.init();
+      this.pswp.listen('close', this.close);
       if (change) {
         this.pswp.listen('afterChange', () => {
-          change(this.pswp.getCurrentIndex())
-        })
+          change(this.pswp.getCurrentIndex());
+        });
       }
     },
     async push(images = [], options = {}) {
       if (!this.pswp) {
-        this.init(arguments)
+        this.init(arguments);
       }
 
-      const items = await getimages(images)
+      const items = await getimages(images);
 
-      this.pswp.items.push(...items)
+      this.pswp.items.push(...items);
       this.pswp.invalidateCurrItems();
       this.pswp.updateSize(true);
 
       if (options.index !== undefined) {
-        this.pswp.goTo(options.index)
+        this.pswp.goTo(options.index);
       }
     },
     close() {
-      if (!this.pswp) return
-      this.pswp.close()
-      this.pswp = null
-    }
+      if (!this.pswp) return;
+      this.pswp.close();
+      this.pswp = null;
+    },
   },
   beforeDestroy() {
-    this.close()
-  }
-}
+    this.close();
+  },
+};
 </script>
 

@@ -1,7 +1,7 @@
 {
   "name": "kuan-vue-photoswipe",
   "version": "1.0.6",
-  "description": "",
+  "description": "vue photoswipe",
   "main": "lib/kuan-vue-photoswipe",
   "scripts": {
     "dev": "node build/dev",

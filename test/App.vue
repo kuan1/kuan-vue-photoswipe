@@ -32,7 +32,7 @@ export default {
           {
             src: 'http://pic.kuan1.top/b8274f321246d26c069dd0618a3f2af6.jpg',
             w: 1024,
-            h: 2000,
+            h: 1500,
           },
         ]
       );

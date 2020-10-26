@@ -1,7 +1,7 @@
 {
   "name": "kuan-vue-photoswipe",
   "version": "2.0.0",
-  "description": "vue photoswipe",
+  "description": "vue3.0 + photoswipe",
   "main": "lib/kuan-vue-photoswipe.umd.min",
   "scripts": {
     "dev": "vue-cli-service serve test/index.js",

@@ -9,10 +9,6 @@
     "build:lib": "vue build src/index.js -t lib -d lib  -n kuan-vue-photoswipe",
     "lint": "vue-cli-service lint"
   },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0"
-  },
   "keywords": [
     "photoswipe",
     "vue3.0"
@@ -22,6 +18,10 @@
     "lib",
     "src"
   ],
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0"
+  },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",

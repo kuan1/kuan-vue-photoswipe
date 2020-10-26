@@ -1,40 +1,33 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 
-const PhotoSwipe = Vue.extend(require('./PhotoSwipe.vue').default)
+import PhotoSwipe from './PhotoSwipe'
 
-let instance
+let app
 
 export default {
   /**
    * 实例化 图片预览
    * @param {Array} images [{src: '', w: '', h: '', title: ''}] 图片数组
-   * @param {Object} options {index: 0, history: false}
+   * @param {Object} options {index: 0, history: false, change, defaultOptions: {}}
    */
   preview(...args) {
-    if (!instance) {
-      instance = new PhotoSwipe({
-        el: document.createElement('div')
-      })
-      document.body.appendChild(instance.$el)
-      Vue.nextTick(() => {
-        instance.init(...args)
+    if (!app) {
+      const div = document.createElement('div')
+      document.body.appendChild(div)
+      const instance = createApp(PhotoSwipe)
+      app = instance.mount(div)
+      console.log(app)
+      app.$nextTick(() => {
+        app.init(...args)
       })
     } else {
-      instance.init(...args)
+      app.init(...args)
     }
-  },
-  push(...args) {
-    if (!instance) {
-      return this.preview(...args)
-    }
-    instance.push(...args)
   },
   close() {
-    if (instance) {
-      instance.close()
-    }
+    app && app.close()
   },
-  install(vue) {
-    vue.prototype.$preview = this.preview
-  }
+  install(app) {
+    app.config.globalProperties.$preview = this.preview
+  },
 }

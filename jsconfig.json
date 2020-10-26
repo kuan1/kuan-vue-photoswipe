@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "kuan-vue-photoswipe": ["src"]
+    }
+  },
+  "allowSyntheticDefaultImports": true,
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
+}

@@ -18,28 +18,27 @@
 export default {
   methods: {
     show() {
-      this.$preview('https://www.google.com.hk/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png')
-      // photoSwiper.preview('https://www.google.com.hk/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png')
+      this.$preview('http://pic.kuan1.top/714ac69ed6649e86797acf7a9051f5cf.jpg');
     },
     showMore() {
       this.$preview(
         // ['https://placekitten.com/600/400', 'https://placekitten.com/1200/900']
         [
           {
-            src: 'https://placekitten.com/600/400',
-            w: 600,
-            h: 400
+            src: 'http://pic.kuan1.top/714ac69ed6649e86797acf7a9051f5cf.jpg',
+            w: 1024,
+            h: 1024,
           },
           {
-            src: 'https://placekitten.com/1200/900',
-            w: 1200,
-            h: 900
-          }
+            src: 'http://pic.kuan1.top/b8274f321246d26c069dd0618a3f2af6.jpg',
+            w: 1024,
+            h: 2000,
+          },
         ]
-      )
-    }
-  }
-}
+      );
+    },
+  },
+};
 </script>
 
 <style scoed>

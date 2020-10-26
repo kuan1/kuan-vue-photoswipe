@@ -2,38 +2,45 @@
   "name": "kuan-vue-photoswipe",
   "version": "1.0.7",
   "description": "vue photoswipe",
-  "main": "lib/kuan-vue-photoswipe",
+  "main": "kuan-vue-photoswipe.umd.min",
   "scripts": {
-    "dev": "node build/dev",
-    "build": "rimraf lib && node build/build",
-    "build:gh": "rimraf dist && node build/build.gh",
-    "deploy": "bash ./deploy.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kuan1/kuan-vue-photoswipe.git"
-  },
-  "keywords": [
-    "photoswipe",
-    "vue"
-  ],
-  "author": "luzhongk@126.com",
-  "files": [
-    "lib",
-    "src"
-  ],
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kuan1/kuan-vue-photoswipe/issues"
-  },
-  "homepage": "https://github.com/kuan1/kuan-vue-photoswipe#readme",
-  "devDependencies": {
-    "kuan-pack-vue": "^2.0.6",
-    "rimraf": "^2.6.3"
+    "dev": "vue-cli-service serve test/index.js",
+    "build": "vue-cli-service build test/index.js",
+    "build:lib": "vue build src/index.js -t lib -d lib  -n kuan-vue-photoswipe",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@babel/runtime": "^7.3.1",
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0-0",
     "photoswipe": "^4.1.2"
-  }
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "license": "ISC"
 }

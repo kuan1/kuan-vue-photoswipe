@@ -1,15 +1,8 @@
-import Vue from 'vue'
-
+import { createApp } from 'vue'
 import App from './App.vue'
 
-import photoSwipe from '../src'
+import photoSwipe from 'kuan-vue-photoswipe'
 
-Vue.use(photoSwipe)
-
-Vue.config.productionTip = false
-
-new Vue({
-  el: '#app',
-  template: '<App/>',
-  components: { App }
-})
+const app = createApp(App)
+app.use(photoSwipe)
+app.mount('#app')

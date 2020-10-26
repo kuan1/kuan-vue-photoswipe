@@ -45,7 +45,10 @@
           <div class="pswp__share-tooltip"></div>
         </div>
 
-        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+        <button
+          class="pswp__button pswp__button--arrow--left"
+          title="Previous (arrow left)"
+        ></button>
 
         <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
 
@@ -63,7 +66,7 @@ import 'photoswipe/dist/default-skin/default-skin.css';
 import PhotoSwipe from 'photoswipe/dist/photoswipe';
 import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 
-import getimages from './getimages.js';
+import loadImages from './loadImages.js';
 
 export default {
   data() {
@@ -73,7 +76,7 @@ export default {
   },
   methods: {
     async init(images = [], options = {}) {
-      const items = await getimages(images);
+      const items = await loadImages(images);
       const { index = 0, history = false, change, defaultOptions = {} } = options;
       if (this.pswp) {
         return;
@@ -94,7 +97,7 @@ export default {
         this.init(arguments);
       }
 
-      const items = await getimages(images);
+      const items = await loadImages(images);
 
       this.pswp.items.push(...items);
       this.pswp.invalidateCurrItems();
@@ -110,7 +113,7 @@ export default {
       this.pswp = null;
     },
   },
-  beforeDestroy() {
+  beforeUnmount() {
     this.close();
   },
 };

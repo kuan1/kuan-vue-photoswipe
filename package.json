@@ -13,6 +13,10 @@
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
+  "files": [
+    "lib",
+    "src"
+  ],
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",

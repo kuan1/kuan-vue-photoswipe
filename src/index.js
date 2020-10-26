@@ -16,7 +16,6 @@ export default {
       document.body.appendChild(div)
       const instance = createApp(PhotoSwipe)
       app = instance.mount(div)
-      console.log(app)
       app.$nextTick(() => {
         app.init(...args)
       })

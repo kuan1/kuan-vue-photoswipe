@@ -13,6 +13,11 @@
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
+  "keywords": [
+    "photoswipe",
+    "vue3.0"
+  ],
+  "author": "luzhongk@126.com",
   "files": [
     "lib",
     "src"

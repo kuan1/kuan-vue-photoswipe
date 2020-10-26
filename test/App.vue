@@ -13,15 +13,15 @@
 </template>
 
 <script>
-// import photoSwiper from '../src'
+import photoSwipe from 'kuan-vue-photoswipe';
 
 export default {
   methods: {
     show() {
-      this.$preview('http://pic.kuan1.top/714ac69ed6649e86797acf7a9051f5cf.jpg');
+      photoSwipe.preview('http://pic.kuan1.top/714ac69ed6649e86797acf7a9051f5cf.jpg');
     },
     showMore() {
-      this.$preview(
+      photoSwipe.preview(
         // ['https://placekitten.com/600/400', 'https://placekitten.com/1200/900']
         [
           {

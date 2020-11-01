@@ -37,5 +37,10 @@
     "last 2 versions",
     "not dead"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuan1/kuan-vue-photoswipe.git"
+  },
+  "homepage": "https://github.com/kuan1/kuan-vue-photoswipe#readme"
 }
